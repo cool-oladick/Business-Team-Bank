@@ -1,28 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/game-icons_piggy-bank.svg" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="animation.css">
     <link rel="stylesheet" href="style.css">
     <title>Business Team Bank</title>
 </head>
 
 <body>
-<div class="progres-bar"></div>
+    <div class="progres-bar"></div>
     <div class="header-box">
         <div id="menu-box">
             <div id="box-logo">
-                <a href="./index.html"><img src="/images/game-icons_piggy-bank.svg" alt=""></a>
-                <a href="/index.html">Business Team Bank</a>
+                <a href="./index.html"><img src="./images/game-icons_piggy-bank.svg" alt=""></a>
+                <a href="./index.html">Business Team Bank</a>
             </div>
-            <nav>
+
+            <!-- Бургер-кнопка -->
+            <div class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Меню -->
+            <nav id="nav-menu">
                 <ul>
-                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="./index.html">Головна</a></li>
                     <li><a href="#">Послуги</a></li>
                     <li><a href="#">Тарифи</a></li>
                     <li><a href="#">Конвертор валют</a></li>
@@ -30,12 +41,20 @@
                     <li><a href="#">Контакти</a></li>
                 </ul>
             </nav>
+            <script>
+                const burger = document.getElementById('burger');
+                const navMenu = document.getElementById('nav-menu');
+
+                burger.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+            </script>
         </div>
 
         <div class="box-header-h1-content">
             <hr id="hr-header">
             <h1>Ваші фінанси під надійним захистом</h1>
-            <p>Сучасні банківські рішення для бізнесу та приватних клієнтів</з>
+            <p>Сучасні банківські рішення для бізнесу та приватних клієнтів</p>
             <div class="box-header-buttons">
                 <div class="header-button"><a href="#">Відкрити рахунок</a></div>
                 <div class="header-button" id="headButt"><a href="#">Дізнатися більше</a></div>
@@ -45,8 +64,8 @@
             </div>
             <hr id="hr-header-2">
         </div>
-
     </div>
+
     <div class="main-container">
         <h2>Ключові переваги:</h2>
         <div class="info">
@@ -58,7 +77,7 @@
         </div>
         <div class="info">
             <div class="info-title">
-                <img src="/images/info-icon-2.svg" alt="">
+                <img src="./images/info-icon-2.svg" alt="">
                 <h4>Вигідні тарифи</h4>
             </div>
             <p>Мінімальні комісії та високі відсотки по депозитах</p>
@@ -72,7 +91,7 @@
         </div>
         <div class="info">
             <div class="info-title">
-                <img src="/images/info-icon-4.svg" alt="">
+                <img src="./images/info-icon-4.svg" alt="">
                 <h4>Безпека</h4>
             </div>
             <p>Надійний захист коштів та даних</p>
