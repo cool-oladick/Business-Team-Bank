@@ -533,15 +533,15 @@ nav ul {
 
 @media (max-width: 400px) {
     #hr-header {
-        width: 250px;
+        width: 255px;
     }
 
     #hr-header-2 {
-        width: 250px;
+        width: 255px;
     }
 
     .header-img-statistics img {
-        left: -5px;
+        left: 0;
         width: 250px;
         top: 425px;
     }
@@ -559,15 +559,15 @@ nav ul {
         width: 315px;
     }
 
-    .box-header-h1-content h1 {
-        /* left: -20px; */
+    /* .box-header-h1-content h1 {
+        /* left: -20px; 
         position: relative;
-    }
+    } */
         .box-header-h1-content {
         top: 200px;
         position: relative;
         margin: 0px 60px;
         position: relative;
-        left: -10px;
+        left: -5px;
     }
 }
