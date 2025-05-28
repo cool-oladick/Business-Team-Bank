@@ -36,13 +36,15 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    position: relative;
+    top: -16px;
 }
 
 #menu-box {
     width: 100%;
     max-width: 1432px;
     height: 69px;
-    top: 35px;
+    top: 15px;
     margin: 0 40px 40px;
     position: fixed;
     background-color: rgba(255, 255, 255, 0.4);
@@ -211,7 +213,7 @@ nav ul {
     height: auto;
     background-color: rgba(255, 255, 255, 0.50);
     margin: 0 auto;
-    padding: 46px 95px 90px;
+    padding: 46px 50px 100px;
     margin-top: 79px;
     margin-bottom: 79px;
     border-radius: 20px;
@@ -254,6 +256,21 @@ nav ul {
     right: 20px;
     top: 1000px;
     z-index: -1;
+}
+
+#accordion {
+    background: #00000000;
+}
+#accordion h6 {
+    color: #fff;
+}
+.card {
+    color: #fff;
+    background-color: rgb(67 67 67 / 15%);;
+}
+.card h6 {
+    color: #fff;
+
 }
 
 @media (max-width: 1400px) {
@@ -494,7 +511,8 @@ nav ul {
 
 @media (max-width: 630px) {
     .main-container {
-        width: 450px;
+        width: 520px;
+        padding: 20px;
     }
 
     .main-container h2 {
@@ -513,11 +531,12 @@ nav ul {
     .info-title img {
         width: 25px;
     }
+
 }
 
 @media (max-width: 515px) {
     .main-container {
-        width: 300px;
+        width: 400px;
     }
 
     #hr-header {
@@ -551,7 +570,7 @@ nav ul {
     }
 
     .main-container {
-        width: 250px;
+        width: 350px;
     }
 
     .info p {
