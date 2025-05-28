@@ -212,11 +212,19 @@ nav ul {
 
     .box-header-h1-content h1 {
         font-size: 44px;
-        line-height: 55px;
+        line-height: 50px;
         width: 330px;
     }
         .header-img-statistics img {
         left: 410px;
         width: 300px;
+    }
+        .box-header-h1-content p {
+        font-size: 14px;
+        line-height: 20px;
+        width: 220px;
+    }
+    .header-button a {
+    width: 180px;
     }
 }
