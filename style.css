@@ -465,7 +465,7 @@ nav ul {
 
     #nav-menu.active {
         display: block;
-        background: rgba(255, 255, 255, 0.4);
+        background: rgb(0 0 0 / 70%);
         margin: 10px;
         width: 400px;
         border: 1px solid #fff;
@@ -485,6 +485,10 @@ nav ul {
     .burger {
         position: relative;
         left: 10px;
+    }
+
+    #box-logo a {
+        font-weight: 700;
     }
 }
 
@@ -563,7 +567,7 @@ nav ul {
         /* left: -20px; 
         position: relative;
     } */
-        .box-header-h1-content {
+    .box-header-h1-content {
         top: 200px;
         position: relative;
         margin: 0px 60px;
