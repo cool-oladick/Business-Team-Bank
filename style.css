@@ -5,10 +5,29 @@
 
 body {
     margin: 0;
-    height: 100vh;
-    background: linear-gradient(to bottom right, #3B462C, #002346);
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #002346, #3B462C, #002346, #3B462C, #002346);
+    background-size: 400% 400%;
+    animation: gradientMove 60s ease infinite;
     font-family: "Montserrat", sans-serif;
     color: #fff;
+    /* display: flex;
+    justify-content: center;  */
+}
+
+/* Анімація */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .header-box {
@@ -33,6 +52,7 @@ body {
     align-items: center;
     z-index: 1;
     font-weight: 200;
+    backdrop-filter: blur(10px);
 }
 
 .header-img-statistics img {
@@ -164,6 +184,47 @@ nav ul {
     text-shadow: 0 3px 3px #ffffff32;
 }
 
+.main-container {
+    width: 800px;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.50);
+    margin: 0 auto;
+    padding: 46px 95px 90px;
+    margin-top: 79px;
+    margin-bottom: 79px;
+    border-radius: 20px;
+    /* display: flex; */
+    /* justify-items: center; */
+}
+
+.main-container h2 {
+    margin: 30px 0;
+    font-size: 35px;
+}
+
+.info {
+    margin: 30px 0;
+}
+
+.info h4 {
+    font-size: 25px;
+}
+
+.info p {
+    font-size: 20px;
+    letter-spacing: 3%;
+    font-weight: 300;
+    margin: 10px 50px;
+    width: 330px;
+}
+
+.info-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 25px 0;
+}
+
 @media (max-width: 1400px) {
     #menu-box {
         margin: 0;
@@ -215,16 +276,24 @@ nav ul {
         line-height: 50px;
         width: 330px;
     }
-        .header-img-statistics img {
+
+    .header-img-statistics img {
         left: 410px;
         width: 300px;
     }
-        .box-header-h1-content p {
+
+    .box-header-h1-content p {
         font-size: 14px;
         line-height: 20px;
         width: 220px;
     }
+
     .header-button a {
-    width: 180px;
+        width: 180px;
+    }
+
+    .box-header-buttons {
+        width: 400px;
+        font-weight: 500;
     }
 }
