@@ -21,7 +21,7 @@ body {
     min-height: 100vh;
     background: linear-gradient(-45deg, #002346, #3B462C, #002346, #3B462C, #002346);
     background-size: 400% 400%;
-    animation: gradientMove 60s ease infinite;
+    animation: gradientMove 30s ease infinite;
     font-family: "Montserrat", sans-serif;
     color: #fff;
     /* display: flex;
@@ -255,9 +255,12 @@ nav ul {
     width: 100%;
     min-height: 1000px;
     height: auto;
-    background-color: #fff;
+    background-image: linear-gradient(45deg, #808183, #E4E5E9);
+    background-size: 400% 400%;
+    /* background: #E4E5E9; */
     padding: 100px;
     color: #000;
+    animation: gradientMove 5s ease infinite;
 }
 
 section {
@@ -645,6 +648,7 @@ section {
         position: relative;
         left: -5px;
     }
+
     .main-body {
         padding: 35px;
     }
