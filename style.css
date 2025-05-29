@@ -31,7 +31,7 @@ body {
 
 .header-box {
     width: 100%;
-    height: 870px;
+    height: 890px;
     background-image: url(./images/header-img-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -55,6 +55,7 @@ body {
     z-index: 1;
     font-weight: 200;
     backdrop-filter: blur(10px);
+    box-shadow: 0 1px 0 #a9a9a9;
 }
 
 .header-img-statistics img {
@@ -62,6 +63,11 @@ body {
     position: absolute;
     left: 0;
     top: 480px;
+    transition: 0.3s;
+}
+
+.header-img-statistics img:hover {
+    width: 220px;
 }
 
 /*#menu-box {
@@ -141,6 +147,12 @@ nav ul {
     height: 175px;
     line-height: 65px;
     margin-top: 58px;
+    transition: 0.3s;
+}
+
+.box-header-h1-content h1:hover {
+    /* width: 690px; */
+    font-size: 66px;
 }
 
 .box-header-h1-content p {
@@ -149,6 +161,12 @@ nav ul {
     height: 80px;
     line-height: 30px;
     font-weight: 300;
+    transition: 0.3s;
+}
+
+.box-header-h1-content p:hover {
+    font-size: 25px;
+    width: 450px;
 }
 
 #hr-header {
@@ -186,10 +204,14 @@ nav ul {
 }
 
 .header-button a:hover {
+    width: 300px;
+}
+
+.header-button a:hover {
     background-color: #ffffff6e;
     color: #fffffff8;
     backdrop-filter: blur(5px);
-    box-shadow: 0 5px 10px #00000044;
+    box-shadow: 0 1px 10px #00000044;
 }
 
 #headButt {
@@ -206,7 +228,7 @@ nav ul {
     background: #00000000;
     backdrop-filter: blur(0px);
     color: #ffffffa3;
-    text-shadow: 0 3px 3px #ffffff32;
+    text-shadow: 0 1px 3px #ffffff32;
 }
 
 .main-container {
@@ -269,6 +291,11 @@ section {
     margin: 0 auto;
 }
 
+section h2 {
+    margin: 50px 0;
+    font-weight: 700;
+}
+
 #decoration-1 {
     width: 500px;
     position: absolute;
@@ -295,13 +322,18 @@ section {
 
 .card {
     color: #000;
-    /* background-color: rgb(67 67 67 / 15%); */
+    background-color: rgba(255, 255, 255, 0);
     margin: 10px 0;
+    border: none;
 }
 
 .card h6 {
     color: #000;
 
+}
+
+.card-header {
+    background: #ffffff00;
 }
 
 @media (max-width: 1400px) {
@@ -651,5 +683,47 @@ section {
 
     .main-body {
         padding: 35px;
+    }
+}
+
+@media (max-width: 360px) {
+    #box-logo a {
+        font-weight: 500;
+    }
+
+    #box-logo img {
+        width: 50px;
+    }
+
+    .burger {
+        position: relative;
+        left: 0px;
+        top: 7px;
+    }
+
+    .main-container {
+        width: 290px;
+    }
+
+    #decoration-1 {
+        width: 160px;
+        right: 25px;
+        top: 1150px;
+    }
+
+    .info p {
+        font-size: 11px;
+        margin: 0px;
+        width: 234px;
+    }
+
+    .box-header-h1-content {
+        left: -33px;
+    }
+
+    .header-img-statistics img {
+        left: 25px;
+        width: 200px;
+        top: 450px;
     }
 }
