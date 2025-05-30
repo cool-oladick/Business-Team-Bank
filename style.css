@@ -339,9 +339,36 @@ section h2 {
     background: #ffffff00;
 }
 
-#aboutBank h6, h5, h4 {
+#aboutBank h6,
+h5,
+h4 {
     margin: 30px 0;
     font-weight: 600;
+}
+
+#aboutBank li {
+    margin-top: 10px;
+}
+
+#contacts {
+    scroll-margin-top: 100px;
+}
+
+#contacts ul li {
+    margin-top: 10px;
+}
+
+#contacts a {
+    color: #000;
+}
+
+#contacts p {
+    margin-top: 50px;
+}
+#map {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
 }
 
 @media (max-width: 1400px) {
@@ -379,6 +406,11 @@ section h2 {
         font-size: 14px;
         line-height: 25px;
     }
+
+    /* #map {
+        width: 500px;
+        height: 500px;
+    } */
 }
 
 @media (max-width: 1070px) {
@@ -398,7 +430,7 @@ section h2 {
 
     .header-img-statistics img {
         left: 410px;
-        width: 300px;
+        width: 200px;
     }
 
     .box-header-h1-content p {
@@ -616,6 +648,16 @@ section h2 {
         left: 0;
         top: 850px;
     }
+
+    .header-img-statistics img {
+        left: 145px;
+        width: 200px;
+    }
+
+    /* #map {
+        width: 325px;
+        height: 380px;
+    } */
 }
 
 @media (max-width: 515px) {
@@ -646,6 +688,10 @@ section h2 {
     #decoration-2 {
         width: 120px;
         top: 900px;
+    }
+
+    .main-body {
+        padding: 35px;
     }
 }
 
@@ -692,6 +738,10 @@ section h2 {
     .main-body {
         padding: 35px;
     }
+
+    #nav-menu.active {
+        width: 275px;
+    }
 }
 
 @media (max-width: 360px) {
@@ -733,5 +783,9 @@ section h2 {
         left: 25px;
         width: 200px;
         top: 450px;
+    }
+
+    .main-body {
+        padding: 20px;
     }
 }
