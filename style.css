@@ -276,9 +276,11 @@ nav ul {
 }
 
 .main-body {
-    width: 100%;
+    width: auto;
+    max-width: 950px;
     min-height: 1000px;
     height: auto;
+    margin: 0 auto;
     background-image: linear-gradient(45deg, #808183, #E4E5E9);
     background-size: 100% 100%;
     /* background: #E4E5E9; */
