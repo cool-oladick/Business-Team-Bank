@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Конвертор валюти</title>
+</head>
+
+<body>
+
+    <h2>Конвертор валюти (Варіант 2)</h2>
+
+    <label>Долари:</label>
+    <input type="number" id="usd" placeholder="Введіть суму у доларах" />
+
+    <br><br>
+
+    <label>Гривні:</label>
+    <input type="number" id="uah" placeholder="Введіть суму у гривнях" />
+
+    <br><br>
+
+    <button onclick="convert()">Перевести</button>
+
+    <script>
+        const rateUSDToUAH = 40;
+
+        function convert() {
+            const usdInput = document.getElementById('usd');
+            const uahInput = document.getElementById('uah');
+
+            const usd = parseFloat(usdInput.value);
+            const uah = parseFloat(uahInput.value);
+
+            if (!isNaN(usd) && usdInput.value !== '') {
+                // Конвертація доларів у гривні
+                const uahResult = usd * rateUSDToUAH;
+                uahInput.value = uahResult.toFixed(2);
+            } else if (!isNaN(uah) && uahInput.value !== '') {
+                // Конвертація гривень у долари
+                const usdResult = uah / rateUSDToUAH;
+                usdInput.value = usdResult.toFixed(2);
+            } else {
+                alert('Введіть суму в одному з полів!');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
