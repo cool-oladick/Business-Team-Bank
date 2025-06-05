@@ -299,14 +299,12 @@ nav ul {
     height: auto;
     margin: 100px auto;
     background-image: linear-gradient(45deg, #3A3B3D, #5C5D61);
-
     background-size: 100% 100%;
     padding: 50px 100px 100px;
     color: #ffffff;
     animation: gradientMove 5s ease infinite;
     border-radius: 5px;
-    border: 1px solid #fff;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 section {
