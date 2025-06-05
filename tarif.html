@@ -118,22 +118,22 @@
             <span></span>
         </div>
 
-             <nav id="nav-menu">
-                <ul>
-                    <li><a href="./index.html">Головна</a></li>
-                    <li><a href="./services.html">Послуги</a></li>
-                    <li><a href="./aboutBank.html">Про банк</a></li>
-                    <li><a href="./contacts">Контакти</a></li>
-                    <li><a href="./tarif.html">Тарифи</a></li>
-                    <li><a href="./convertor.html">Конвертор валют</a></li>
-                </ul>
-                <label class="switch">
-                    <img id="img1" src="https://img.icons8.com/?size=100&id=Wdnu-edbShJS&format=png&color=000000" />
-                    <input type="checkbox" id="themeToggle" onclick="changeCSS()" />
-                    <span class="slider"></span>
-                </label>
-                <script src="script.js"></script>
-            </nav>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="./index.html">Головна</a></li>
+                <li><a href="./services.html">Послуги</a></li>
+                <li><a href="./aboutBank.html">Про банк</a></li>
+                <li><a href="./contacts">Контакти</a></li>
+                <li><a href="./tarif.html">Тарифи</a></li>
+                <li><a href="./convertor.html">Конвертор валют</a></li>
+            </ul>
+            <label class="switch">
+                <img id="img1" src="https://img.icons8.com/?size=100&id=Wdnu-edbShJS&format=png&color=000000" />
+                <input type="checkbox" id="themeToggle" onclick="changeCSS()" />
+                <span class="slider"></span>
+            </label>
+            <script src="script.js"></script>
+        </nav>
         <script>
             const burger = document.getElementById('burger');
             const navMenu = document.getElementById('nav-menu');
@@ -185,6 +185,37 @@
                         <a href="#" class="btn-2 btn-primary">Дивитися більше</a>
                     </div>
                 </div>
+            </div>
+            
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+                <!-- Indicators/dots -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                </div>
+
+                <!-- The slideshow/carousel -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./images/for-tarif-1.png" alt="Los Angeles" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/for-tarif-2.png" alt="Chicago" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/for-tarif-3.png" alt="New York" class="d-block w-100">
+                    </div>
+                </div>
+
+                <!-- Left and right controls/icons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
             </div>
         </section>
     </div>
@@ -263,7 +294,7 @@
             </ul>
         </div>
 
- 
+
         <div class="footer-column">
             <h4>BTB Community</h4>
             <ul>

@@ -617,6 +617,10 @@ input:checked+.slider:before {
     width: 35px;
 }
 
+#demo {
+    margin-top: 100px;
+}
+
 @media (max-width: 1400px) {
     #menu-box {
         margin: 0;
@@ -869,6 +873,7 @@ input:checked+.slider:before {
         font-size: 40px !important;
         margin-left: 20px !important;
     }
+
     .header-box-5 p {
         font-size: 18px !important;
         /* margin-left: 20px; */
@@ -999,7 +1004,7 @@ input:checked+.slider:before {
     #nav-menu.active {
         width: 275px;
     }
-    
+
     .header-box-5 p {
         margin-top: 40px !important;
     }
@@ -1049,7 +1054,7 @@ input:checked+.slider:before {
     .main-body {
         padding: 20px;
     }
-        
+
     .header-box-5 p {
         margin-top: 80px !important;
     }
