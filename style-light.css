@@ -19,6 +19,8 @@
 body {
     margin: 0;
     min-height: 100vh;
+
+
     background: linear-gradient(-45deg, #002346, #3B462C, #002346, #3B462C, #002346);
     background-size: 200% 200%;
     animation: gradientMove 10s ease infinite;
@@ -113,6 +115,20 @@ nav ul {
     gap: 20px;
     margin: 0;
     padding: 17px;
+}
+
+#nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav-menu ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .burger {
@@ -490,6 +506,46 @@ footer ul li a:hover {
     font-size: 16px;
 }
 
+.switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 34px;
+    margin: 0 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    transition: 0.4s;
+    border-radius: 34px;
+    cursor: pointer;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgb(0, 0, 0);
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
 
 @media (max-width: 1400px) {
     #menu-box {
