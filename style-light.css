@@ -801,6 +801,19 @@ input:checked+.slider:before {
     #box-logo a {
         font-weight: 700;
     }
+
+    .header-box-5 h2 {
+        font-size: 40px !important;
+        margin-left: 20px !important;
+    }
+
+    .header-box-5 p {
+        font-size: 18px !important;
+        /* margin-left: 20px; */
+        right: 0 !important;
+        /* text-align: center; */
+    }
+
 }
 
 @media (max-width: 630px) {
@@ -925,6 +938,10 @@ input:checked+.slider:before {
     #nav-menu.active {
         width: 275px;
     }
+
+    .header-box-5 p {
+        margin-top: 40px !important;
+    }
 }
 
 @media (max-width: 360px) {
@@ -970,5 +987,9 @@ input:checked+.slider:before {
 
     .main-body {
         padding: 20px;
+    }
+        
+    .header-box-5 p {
+        margin-top: 80px !important;
     }
 }
