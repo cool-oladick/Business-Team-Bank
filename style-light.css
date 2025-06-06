@@ -72,13 +72,6 @@ body {
     width: 220px;
 }
 
-/*#menu-box {
-  width: 100%;
-  max-width: 1400px;  ✔ обмеження максимуму, якщо потрібно 
-   margin: 40px auto;  ✔ автоматичне центрування 
-   padding: 10px 20px; ✔ внутрішній відступ 
-} */
-
 #menu-box ul {
     list-style-type: none;
 }
@@ -148,11 +141,6 @@ nav ul {
     position: relative;
 }
 
-/* Адаптивне меню */
-/* @media screen and (max-width: 860px) {
-
-} */
-
 .box-header-h1-content {
     top: 209px;
     position: relative;
@@ -178,11 +166,6 @@ nav ul {
     font-weight: 300;
     transition: 0.3s;
 }
-
-/* .box-header-h1-content p:hover {
-    font-size: 25px;
-    width: 450px;
-} */
 
 #hr-header {
     width: 800px;
@@ -220,10 +203,6 @@ nav ul {
     box-shadow: 0 5px 10px #ffffff44;
 }
 
-/* .header-button a:hover {
-    width: 300px;
-} */
-
 .header-button a:hover {
     background-color: #ffffff6e;
     color: #fffffff8;
@@ -232,7 +211,6 @@ nav ul {
 }
 
 #headButt {
-    /* background: #00000000; */
     border: 1px solid #fff;
 }
 
@@ -260,8 +238,6 @@ nav ul {
     margin-bottom: 79px;
     border-radius: 20px;
     backdrop-filter: blur(2px);
-    /* display: flex; */
-    /* justify-items: center; */
 }
 
 .main-container h2 {
@@ -300,7 +276,7 @@ nav ul {
     margin: 100px auto;
     background-image: linear-gradient(45deg, #808183, #E4E5E9);
     background-size: 100% 100%;
-    padding: 50px 100px 100px;
+    padding: 10px;
     color: #000;
     animation: gradientMove 5s ease infinite;
     border-radius: 5px;

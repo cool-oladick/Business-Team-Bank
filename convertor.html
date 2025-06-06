@@ -16,24 +16,82 @@
     <link id="path" rel="stylesheet" href="style-light.css">
     <title>КОНВЕРТОР ВАЛЮТ</title>
     <style>
-        .header-box-5 {
-            background-image: url(./images/converter.png);
+        .convertor {
+            margin: 10px;
+        }
+
+        input {
+            background-color: #ffffff00;
+            border: 1px solid #fff;
+            border-radius: 10px;
+            padding: 5px 10px;
+        }
+
+        input::placeholder {
+            color: rgb(130, 130, 130);
+        }
+
+        button {
+            color: #000;
+            background: #fff;
+            padding: 10px 95px;
+            border: 1px solid;
+            border-radius: 10px;
+        }
+
+        .convertor-img img {
+            max-width: 600px;
             width: 100%;
-            height: 700px;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            flex-direction: column;
+        }
+
+        .box-conv {
             display: flex;
-            justify-content: center;
+            flex-wrap: wrap;
             align-items: center;
+        }
+
+        /* Game Styling */
+        .game-container {
+            background: linear-gradient(45deg, #2b2b2b, #3e3e3e);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            margin: 50px auto;
+            color: white;
+        }
+
+        .game-container input[type="number"] {
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            width: 80%;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            background-color: white;
+            color: black;
+        }
+
+        .game-container button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 8px;
+            background-color: #5aab61;
+            color: white;
+            cursor: pointer;
+        }
+
+        .game-container .message {
+            margin-top: 20px;
+            font-size: 1.1em;
         }
     </style>
 </head>
 
 <body>
-
-
     <div class="progres-bar"></div>
     <div id="menu-box">
         <div id="box-logo">
@@ -72,40 +130,81 @@
             });
         </script>
     </div>
-    <div class="header-box-5">
-    </div>
-    <div class="main-body"><label>Долари:</label>
-        <input type="number" id="usd" placeholder="Введіть суму у доларах" />
 
-        <br><br>
+    <div class="main-body">
+        <div class="box-conv">
+            <section class="convertor-img">
+                <img src="./images/dmytro-demidko-eBWzFKahEaU-unsplash.jpg" alt="">
+            </section>
 
-        <label>Гривні:</label>
-        <input type="number" id="uah" placeholder="Введіть суму у гривнях" />
+            <section class="convertor">
+                <h2 style="margin-bottom: 30px;">Конвертор валют</h2>
 
-        <br><br>
+                <label>Долари:</label>
+                <input type="number" id="usd" placeholder="Введіть суму у доларах" />
 
-        <button onclick="convert()">Перевести</button>
+                <br><br>
+
+                <label>Гривні:</label>
+                <input type="number" id="uah" placeholder="Введіть суму у гривнях" />
+
+                <br><br>
+
+                <button onclick="convert()">Перевести</button>
+
+                <script>
+                    const rateUSDToUAH = 40;
+
+                    function convert() {
+                        const usdInput = document.getElementById('usd');
+                        const uahInput = document.getElementById('uah');
+
+                        const usd = parseFloat(usdInput.value);
+                        const uah = parseFloat(uahInput.value);
+
+                        if (!isNaN(usd) && usdInput.value !== '') {
+                            const uahResult = usd * rateUSDToUAH;
+                            uahInput.value = uahResult.toFixed(2);
+                        } else if (!isNaN(uah) && uahInput.value !== '') {
+                            const usdResult = uah / rateUSDToUAH;
+                            usdInput.value = usdResult.toFixed(2);
+                        } else {
+                            alert('Введіть суму в одному з полів!');
+                        }
+                    }
+                </script>
+            </section>
+        </div>
+
+        <!-- Гра "Вгадай курс" -->
+        <div class="game-container">
+            <h2>🎯 Вгадай курс долара на завтра</h2>
+            <p>Спробуй вгадати курс $USD → UAH (з точністю до 0.01)</p>
+            <input type="number" step="0.01" id="guess" placeholder="Введи число, напр. 39.20" />
+            <br>
+            <button onclick="checkGuess()">Перевірити</button>
+            <div class="message" id="message"></div>
+        </div>
 
         <script>
-            const rateUSDToUAH = 40;
+            const targetRate = (Math.random() * 2 + 38).toFixed(2);
 
-            function convert() {
-                const usdInput = document.getElementById('usd');
-                const uahInput = document.getElementById('uah');
+            function checkGuess() {
+                const guessInput = document.getElementById("guess");
+                const message = document.getElementById("message");
+                const userGuess = parseFloat(guessInput.value).toFixed(2);
 
-                const usd = parseFloat(usdInput.value);
-                const uah = parseFloat(uahInput.value);
+                if (!userGuess || isNaN(userGuess)) {
+                    message.innerHTML = "⛔ Введіть дійсне число!";
+                    return;
+                }
 
-                if (!isNaN(usd) && usdInput.value !== '') {
-                    // Конвертація доларів у гривні
-                    const uahResult = usd * rateUSDToUAH;
-                    uahInput.value = uahResult.toFixed(2);
-                } else if (!isNaN(uah) && uahInput.value !== '') {
-                    // Конвертація гривень у долари
-                    const usdResult = uah / rateUSDToUAH;
-                    usdInput.value = usdResult.toFixed(2);
+                if (userGuess == targetRate) {
+                    message.innerHTML = `🎉 Молодець! Ти вгадав. Курс був ${targetRate} грн.`;
+                } else if (userGuess < targetRate) {
+                    message.innerHTML = `📉 Занизько. Спробуй вище.`;
                 } else {
-                    alert('Введіть суму в одному з полів!');
+                    message.innerHTML = `📈 Завелике значення. Спробуй нижче.`;
                 }
             }
         </script>

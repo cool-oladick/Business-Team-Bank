@@ -299,7 +299,7 @@ nav ul {
     margin: 100px auto;
     background-image: linear-gradient(45deg, #3A3B3D, #5C5D61);
     background-size: 100% 100%;
-    padding: 50px 100px 100px;
+    padding: 10px;
     color: #ffffff;
     animation: gradientMove 5s ease infinite;
     border-radius: 5px;
