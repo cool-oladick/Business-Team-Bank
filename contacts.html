@@ -15,6 +15,55 @@
     <link rel="stylesheet" href="animation.css">
     <link id="path" rel="stylesheet" href="style-light.css">
     <title>Business Team Bank</title>
+    <style>
+        #calendar {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #calendar th,
+        #calendar td {
+            border: 1px solid #2828282e;
+            width: 14.28%;
+            height: 80px;
+            text-align: center;
+            vertical-align: middle;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+
+
+        #calendar th {
+            background-color: #8c95ae8d;
+            /* border-radius: 50%; */
+            border: none;
+        }
+
+        .today {
+            color: #fff;
+            background-image: linear-gradient(45deg, #1c3081, #E4E5E9);
+            background-size: 100% 100%;
+            font-weight: bold;
+            /* border: 1px solid #303030; */
+            border-radius: 50%;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+        }
+        .header-box-3 {
+            background-image: url(./images/contacts.png);
+            width: 100%;
+            height: 700px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -33,22 +82,22 @@
             <span></span>
         </div>
 
-            <nav id="nav-menu">
-                <ul>
-                    <li><a href="./index.html">Головна</a></li>
-                    <li><a href="./services.html">Послуги</a></li>
-                    <li><a href="./aboutBank.html">Про банк</a></li>
-                    <li><a href="./contacts">Контакти</a></li>
-                    <li><a href="./tarif.html">Тарифи</a></li>
-                    <li><a href="./convertor.html">Конвертор валют</a></li>
-                </ul>
-                <label class="switch">
-                    <img id="img1" src="https://img.icons8.com/?size=100&id=Wdnu-edbShJS&format=png&color=000000" />
-                    <input type="checkbox" id="themeToggle" onclick="changeCSS()" />
-                    <span class="slider"></span>
-                </label>
-                <script src="script.js"></script>
-            </nav>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="./index.html">Головна</a></li>
+                <li><a href="./services.html">Послуги</a></li>
+                <li><a href="./aboutBank.html">Про банк</a></li>
+                <li><a href="./contacts">Контакти</a></li>
+                <li><a href="./tarif.html">Тарифи</a></li>
+                <li><a href="./convertor.html">Конвертор валют</a></li>
+            </ul>
+            <label class="switch">
+                <img id="img1" src="https://img.icons8.com/?size=100&id=Wdnu-edbShJS&format=png&color=000000" />
+                <input type="checkbox" id="themeToggle" onclick="changeCSS()" />
+                <span class="slider"></span>
+            </label>
+            <script src="script.js"></script>
+        </nav>
         <script>
             const burger = document.getElementById('burger');
             const navMenu = document.getElementById('nav-menu');
@@ -59,14 +108,13 @@
         </script>
     </div>
 
-    <div class="header-box-2">
-        <h2>📞 КОНТАКТИ</h2>
+    <div class="header-box-3">
     </div>
 
 
     <div class="main-body">
         <section id="contacts">
-
+            <h2>📞 КОНТАКТИ</h2>
             <p><strong>Гаряча лінія:</strong>
             <ul>
                 <li><a href="tel:800 500 500">800 500 500 </a> (безкоштовно по Україні)</li>
@@ -98,6 +146,85 @@
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.8235587002114!2d30.520241976905552!3d50.44438707159108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce55d0276e59%3A0xb03fd0a90c6de69a!2z0LLRg9C70LjRhtGPINCl0YDQtdGJ0LDRgtC40LosIDI1LCDQmtC40ZfQsiwg0KPQutGA0LDRl9C90LAsIDAxMDAx!5e0!3m2!1suk!2sde!4v1748852065044!5m2!1suk!2sde"
                 width="900" height="600" style="border: 1px solid #fff; border-radius: 20px;" allowfullscreen=""
                 loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+        <section id="calendar-section">
+            <h2>Робочі дні</h2>
+            <div id="calendar"></div>
+            <div id="dayTypeMessage"></div>
+            <script>
+                const date = new Date();
+                const day = date.getDay();
+
+                const calendar = document.getElementById("calendar");
+                const message = document.getElementById("dayTypeMessage");
+
+                const dayName = date.toLocaleDateString("uk-UA", {
+                    weekday: 'long',
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                });
+
+                calendar.innerText = "Сьогодні: " + dayName;
+
+                if (day === 0 || day === 6) {
+                    message.innerText = "Сьогодні – вихідний";
+                    message.style.color = "red";
+                } else {
+                    message.innerText = "Сьогодні – будній день. Банк працює з 9:00 до 18:00.";
+                    message.style.color = "green";
+                }
+            </script>
+            <table id="calendar">
+                <thead>
+                    <tr>
+                        <th>Пн</th>
+                        <th>Вт</th>
+                        <th>Ср</th>
+                        <th>Чт</th>
+                        <th>Пт</th>
+                        <th>Сб</th>
+                        <th>Нд</th>
+                    </tr>
+                </thead>
+                <tbody id="calendar-body">
+                </tbody>
+            </table>
+
+            <script>
+                const tableBody = document.getElementById("calendar-body");
+                const today = new Date();
+                const currentDay = today.getDate();
+                const month = today.getMonth();
+                const year = today.getFullYear();
+
+                const firstDay = new Date(year, month, 1).getDay();
+                const startDay = (firstDay + 6) % 7;
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+                let dateC = 1;
+
+                for (let i = 0; i < 6; i++) {
+                    const row = document.createElement("tr");
+                    for (let j = 0; j < 7; j++) {
+                        const cell = document.createElement("td");
+                        if (i === 0 && j < startDay) {
+                            cell.textContent = "";
+                        } else if (dateC <= daysInMonth) {
+                            if (dateC === currentDay) {
+                                cell.innerHTML = `<span class="today">${dateC}</span>`;
+                            } else {
+                                cell.textContent = dateC;
+                            }
+                            dateC++;
+                        } else {
+                            cell.textContent = "";
+                        }
+                        row.appendChild(cell);
+                    }
+                    tableBody.appendChild(row);
+                    if (dateC > daysInMonth) break;
+                }
+            </script>
         </section>
     </div>
 

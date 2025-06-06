@@ -16,43 +16,6 @@
     <link id="path" rel="stylesheet" href="style-light.css">
 
     <title>Business Team Bank</title>
-    <style>
-        #calendar {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        #calendar th,
-        #calendar td {
-            border: 1px solid #2828282e;
-            width: 14.28%;
-            height: 80px;
-            text-align: center;
-            vertical-align: middle;
-            font-family: Arial, sans-serif;
-            font-size: 18px;
-        }
-
-
-        #calendar th {
-            background-color: #8c95ae8d;
-            /* border-radius: 50%; */
-            border: none;
-        }
-
-        .today {
-            color: #fff;
-            background-image: linear-gradient(45deg, #1c3081, #E4E5E9);
-            background-size: 100% 100%;
-            font-weight: bold;
-            /* border: 1px solid #303030; */
-            border-radius: 50%;
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
-        }
-    </style>
 </head>
 
 <body>
@@ -144,89 +107,6 @@
             </div>
             <p>Надійний захист коштів та даних</p>
         </div>
-    </div>
-    <div class="main-body">
-        <section id="calendar-section">
-            <h2>Робочі дні</h2>
-            <div id="calendar"></div>
-            <div id="dayTypeMessage"></div>
-            <script>
-                const date = new Date();
-                const day = date.getDay(); // 0 - неділя, 6 - субота
-
-                const calendar = document.getElementById("calendar");
-                const message = document.getElementById("dayTypeMessage");
-
-                const dayName = date.toLocaleDateString("uk-UA", {
-                    weekday: 'long',
-                    day: 'numeric',
-                    month: 'long',
-                    year: 'numeric'
-                });
-
-                calendar.innerText = "Сьогодні: " + dayName;
-
-                if (day === 0 || day === 6) {
-                    message.innerText = "Сьогодні – вихідний";
-                    message.style.color = "red";
-                } else {
-                    message.innerText = "Сьогодні – будній день. Банк працює з 9:00 до 18:00.";
-                    message.style.color = "green";
-                }
-            </script>
-            <table id="calendar">
-                <thead>
-                    <tr>
-                        <th>Пн</th>
-                        <th>Вт</th>
-                        <th>Ср</th>
-                        <th>Чт</th>
-                        <th>Пт</th>
-                        <th>Сб</th>
-                        <th>Нд</th>
-                    </tr>
-                </thead>
-                <tbody id="calendar-body">
-                </tbody>
-            </table>
-
-            <script>
-                const tableBody = document.getElementById("calendar-body");
-                const today = new Date();
-                const currentDay = today.getDate();
-                const month = today.getMonth();
-                const year = today.getFullYear();
-
-                const firstDay = new Date(year, month, 1).getDay();
-                const startDay = (firstDay + 6) % 7;
-                const daysInMonth = new Date(year, month + 1, 0).getDate();
-                let dateC = 1;
-
-                for (let i = 0; i < 6; i++) {
-                    const row = document.createElement("tr");
-                    for (let j = 0; j < 7; j++) {
-                        const cell = document.createElement("td");
-                        if (i === 0 && j < startDay) {
-                            cell.textContent = "";
-                        } else if (dateC <= daysInMonth) {
-                            if (dateC === currentDay) {
-                                cell.innerHTML = `<span class="today">${dateC}</span>`;
-                            } else {
-                                cell.textContent = dateC;
-                            }
-                            dateC++;
-                        } else {
-                            cell.textContent = "";
-                        }
-                        row.appendChild(cell);
-                    }
-                    tableBody.appendChild(row);
-                    if (dateC > daysInMonth) break;
-                }
-            </script>
-        </section>
-
-
     </div>
 
 
